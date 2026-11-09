@@ -2,29 +2,21 @@
 
 int main(void)
 {
-    int n;
-    long total = 0;
-    int i = 1;
-    scanf("%d", &n);
-    if (n < 0)
-    {
+    int limit;
+    if (scanf("%d", &limit) != 1) {
+        return 0;
+    }
+    if (limit < 0) {
         printf("NG");
         return 0;
     }
-    while (1)
-    {
-        if (i > n)
-        {
-            break;
-        }
-        if (i % 2 != 0)
-        {
-            i++;
-            continue;
-        }
-        total += i;
-        i++;
+
+    int even_count = limit / 2;
+    long long total = 0;
+    for (int position = 1; position <= even_count; position++) {
+        total += 2LL * position;
     }
-    printf("%ld", total);
+
+    printf("%lld", total);
     return 0;
 }
