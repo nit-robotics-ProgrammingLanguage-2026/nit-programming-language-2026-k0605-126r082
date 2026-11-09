@@ -16,6 +16,7 @@ int main(void)
     for (int position = 1; position <= even_count; position++) {
         total += 2LL * position;
     }
+
     printf("%lld", total);
     return 0;
 }
